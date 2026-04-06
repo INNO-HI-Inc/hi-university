@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="relative mx-auto max-w-[1400px] px-4 md:px-6 py-4 md:py-6">
@@ -36,7 +38,7 @@ function Hero() {
             데이터를 바탕으로 수시에 대한 답을 찾아드립니다.
             <br />지금 무료로 시작해보세요.
           </p>
-          <a
+          <Link
             href="/input"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-[13px] font-bold text-white transition hover:bg-primary-dark active:scale-[0.97]"
           >
@@ -51,7 +53,7 @@ function Hero() {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
         </div>
 
         {/* RIGHT — single app mockup */}
@@ -150,7 +152,7 @@ function Card({
   children: React.ReactNode;
 }) {
   return (
-    <a href={href} className="card-3d group relative">
+    <Link href={href} className="card-3d group relative">
       <div className="card-3d-inner svc-card flex items-center gap-4 overflow-hidden rounded-2xl border border-line bg-white px-5 py-5">
         {badge && (
           <span className="absolute right-2 top-2 z-10 rounded-full bg-cta px-2 py-0.5 text-[9px] font-bold text-ink">
@@ -165,7 +167,7 @@ function Card({
           {children}
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 

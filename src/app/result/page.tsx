@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { matchUniversities, type University } from "@/data/universities";
 
 interface InputData {
@@ -28,7 +29,7 @@ export default function ResultPage() {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4">
         <p className="text-[15px] text-slate">성적 데이터가 없습니다.</p>
-        <a href="/input" className="rounded-xl bg-primary px-5 py-2.5 text-[13px] font-bold text-white transition hover:bg-primary-dark">성적 입력하기</a>
+        <Link href="/input" className="rounded-xl bg-primary px-5 py-2.5 text-[13px] font-bold text-white transition hover:bg-primary-dark">성적 입력하기</Link>
       </div>
     );
   }
@@ -135,13 +136,13 @@ export default function ResultPage() {
           <h2 className="mb-2 text-[22px] font-extrabold text-white">전체 분석 리포트 받기</h2>
           <p className="mb-6 text-[14px] text-white/40">강점 분석, 면접 전략, 세특 보강, AI 모의면접까지 한번에</p>
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <a href="/pricing" className="inline-flex items-center gap-2 rounded-xl bg-cta px-8 py-4 text-[15px] font-bold text-ink shadow-[0_6px_28px_rgba(168,232,71,0.3)] transition-all duration-200 hover:bg-cta-dark active:scale-[0.97]">
+            <Link href="/pricing" className="inline-flex items-center gap-2 rounded-xl bg-cta px-8 py-4 text-[15px] font-bold text-ink shadow-[0_6px_28px_rgba(168,232,71,0.3)] transition-all duration-200 hover:bg-cta-dark active:scale-[0.97]">
               이용권 보기
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </a>
-            <a href="/demo" className="text-[14px] font-medium text-white/40 transition hover:text-white">
+            </Link>
+            <Link href="/demo" className="text-[14px] font-medium text-white/40 transition hover:text-white">
               데모 리포트 먼저 보기
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -152,7 +153,7 @@ export default function ResultPage() {
           <div className="mx-4 max-w-md rounded-2xl bg-white p-8" onClick={(e) => e.stopPropagation()}>
             <h3 className="mb-2 text-[20px] font-extrabold text-ink">상세 분석을 확인하려면</h3>
             <p className="mb-6 text-[14px] text-slate">이용권을 구매하시면 30페이지 이상의 상세 리포트를 즉시 확인할 수 있습니다.</p>
-            <a href="/pricing" className="block w-full rounded-xl bg-primary py-3 text-center text-[15px] font-bold text-white transition hover:bg-primary-dark">이용권 보기</a>
+            <Link href="/pricing" className="block w-full rounded-xl bg-primary py-3 text-center text-[15px] font-bold text-white transition hover:bg-primary-dark">이용권 보기</Link>
             <button onClick={() => setShowPaywall(false)} className="mt-3 w-full py-2 text-center text-[13px] text-slate">닫기</button>
           </div>
         </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const products = [
   {
     id: "basic",
@@ -154,10 +156,10 @@ export default function PricingPage() {
         <div className="mt-16 rounded-2xl hero-dark p-10 text-center">
           <h2 className="mb-2 text-[22px] font-extrabold text-white">지금 시작하세요</h2>
           <p className="mb-6 text-[14px] text-white/40">신규 가입 시 생기부 진단 1회 무료 체험</p>
-          <a href="/input" className="inline-flex items-center gap-2 rounded-xl bg-cta px-8 py-4 text-[15px] font-bold text-ink transition-all duration-200 hover:bg-cta-dark active:scale-[0.97]">
+          <Link href="/input" className="inline-flex items-center gap-2 rounded-xl bg-cta px-8 py-4 text-[15px] font-bold text-ink transition-all duration-200 hover:bg-cta-dark active:scale-[0.97]">
             무료 진단 시작하기
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
