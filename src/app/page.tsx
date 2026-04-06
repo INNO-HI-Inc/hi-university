@@ -56,7 +56,7 @@ function Hero() {
         </div>
 
         {/* RIGHT — white app screens stacked */}
-        <div className="relative hidden h-[340px] lg:block">
+        <div className="relative hidden h-[340px] lg:block" style={{ transform: "scale(0.82)", transformOrigin: "top left" }}>
           {/* Screen A: 뒤 왼쪽 — 대학 리스트 */}
           <div className="absolute left-0 top-3 z-10 w-[195px] rounded-xl bg-white p-3 shadow-[0_4px_20px_rgba(0,0,0,0.12)]">
             <div className="mb-2 flex items-center gap-1">
