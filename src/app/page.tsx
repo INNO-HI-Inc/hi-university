@@ -30,7 +30,7 @@ function Hero() {
         <div>
           <p className="mb-2 text-[12px] md:text-[14px] font-medium text-white/60">나만의 입시 컨설턴트</p>
           <h1 className="mb-3 text-[24px] md:text-[32px] lg:text-[40px] font-extrabold leading-[1.2] text-white">
-            나만의 입시 컨설턴트 바이브온
+            나만의 입시 컨설턴트 하이유니
           </h1>
           <p className="mb-6 text-[13px] leading-[1.7] text-white/45">
             데이터를 바탕으로 수시에 대한 답을 찾아드립니다.
@@ -240,7 +240,7 @@ function Sidebar() {
       {/* Stats */}
       <div className="rounded-2xl border border-line bg-white p-5">
         <div className="mb-3 flex items-center justify-between">
-          <h3 className="text-[13px] font-bold text-ink">숫자로 보는 바이브온</h3>
+          <h3 className="text-[13px] font-bold text-ink">숫자로 보는 하이유니</h3>
           <div className="flex items-center gap-1">
             <span className="text-[9px] text-slate/60">2026/04/06 기준</span>
             <button className="flex h-5 w-5 items-center justify-center rounded border border-line text-[10px] text-slate">
