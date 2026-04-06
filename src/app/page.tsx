@@ -29,9 +29,8 @@ function Hero() {
         {/* LEFT TEXT */}
         <div>
           <p className="mb-2 text-[14px] font-medium text-primary-light/70">나만의 입시 컨설턴트</p>
-          <h1 className="mb-3 text-[40px] lg:text-[48px] font-extrabold leading-[1.18] text-white">
-            나만의 입시 컨설턴트
-            <br />바이브온
+          <h1 className="mb-3 text-[32px] lg:text-[40px] font-extrabold leading-[1.18] text-white whitespace-nowrap">
+            나만의 입시 컨설턴트 바이브온
           </h1>
           <p className="mb-6 text-[13px] leading-[1.7] text-white/45">
             데이터를 바탕으로 수시에 대한 답을 찾아드립니다.
