@@ -2,7 +2,7 @@
 
 export default function Home() {
   return (
-    <div className="relative mx-auto max-w-[1280px] px-6 py-6 bg-paper">
+    <div className="relative mx-auto max-w-[1280px] px-6 py-6 bg-white">
       {/* 2-COLUMN LAYOUT (starts from hero) */}
       <div className="grid gap-5 lg:grid-cols-[1fr_310px]">
         {/* LEFT COLUMN */}
