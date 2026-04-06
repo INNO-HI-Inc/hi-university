@@ -30,7 +30,7 @@
   --color-blue: #448CFF;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; zoom: 1.25; }
 
 body {
   font-family: "A2G", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
