@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* ── A2G Font ── */
+@font-face { font-family: "A2G"; src: url("/fonts/에이투지체-1Thin.woff2") format("woff2"); font-weight: 100; font-display: swap; }
+@font-face { font-family: "A2G"; src: url("/fonts/에이투지체-2ExtraLight.woff2") format("woff2"); font-weight: 200; font-display: swap; }
+@font-face { font-family: "A2G"; src: url("/fonts/에이투지체-3Light.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "A2G"; src: url("/fonts/에이투지체-4Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "A2G"; src: url("/fonts/에이투지체-5Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "A2G"; src: url("/fonts/에이투지체-6SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "A2G"; src: url("/fonts/에이투지체-7Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "A2G"; src: url("/fonts/에이투지체-8ExtraBold.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "A2G"; src: url("/fonts/에이투지체-9Black.woff2") format("woff2"); font-weight: 900; font-display: swap; }
+
+@theme {
+  --color-primary: #448CFF;
+  --color-primary-light: #6BA3FF;
+  --color-primary-dark: #2F6FE4;
+  --color-primary-bg: #EDF4FF;
+  --color-ink: #1a1a2e;
+  --color-ink-light: #2d2d44;
+  --color-slate: #8b8b9e;
+  --color-paper: #F7F8FA;
+  --color-line: #EAECF0;
+  --color-cta: #A8E847;
+  --color-cta-dark: #8FD02E;
+  --color-orange: #FF7A3D;
+  --color-red: #E8453C;
+  --color-amber: #E8A817;
+  --color-green: #1DAA6B;
+  --color-blue: #448CFF;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "A2G", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+.hero-dark {
+  background: linear-gradient(135deg, #0B1A2B 0%, #132D4F 50%, #0B1A2B 100%);
+}
+
+/* card hover */
+.svc-card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.svc-card:hover {
+  box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+/* 3D card perspective */
+.card-3d {
+  perspective: 800px;
+}
+.card-3d-inner {
+  transition: transform 0.4s ease;
+  transform-style: preserve-3d;
+}
+.card-3d:hover .card-3d-inner {
+  transform: rotateY(-3deg) rotateX(2deg) translateZ(10px);
+}
