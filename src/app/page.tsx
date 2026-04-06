@@ -55,10 +55,10 @@ function Hero() {
           </a>
         </div>
 
-        {/* RIGHT — white app screens stacked */}
-        <div className="relative hidden h-[340px] lg:block" style={{ transform: "scale(0.82)", transformOrigin: "top left" }}>
-          {/* Screen A: 뒤 왼쪽 — 대학 리스트 */}
-          <div className="absolute left-0 top-3 z-10 w-[195px] rounded-xl bg-white p-3 shadow-[0_4px_20px_rgba(0,0,0,0.12)]">
+        {/* RIGHT — white app screens */}
+        <div className="relative hidden h-[300px] lg:block overflow-hidden">
+          {/* Screen A: 왼쪽 — 합격 예측 */}
+          <div className="absolute left-0 top-0 z-10 w-[160px] rounded-xl bg-white p-3 shadow-[0_4px_20px_rgba(0,0,0,0.12)]">
             <div className="mb-2 flex items-center gap-1">
               <div className="h-1.5 w-1.5 rounded-full bg-primary" />
               <span className="text-[8px] font-bold text-primary">합격 예측</span>
@@ -66,12 +66,8 @@ function Hero() {
             <div className="space-y-[3px]">
               {["서울대 컴공", "연세대 AI", "고려대 컴퓨터", "성균관대 SW"].map((u, i) => (
                 <div key={u} className="flex items-center justify-between rounded bg-paper px-2 py-[4px]">
-                  <span className="text-[8px] text-ink/50">{u}</span>
-                  <span
-                    className={`text-[8px] font-bold ${
-                      ["text-red", "text-red", "text-amber", "text-green"][i]
-                    }`}
-                  >
+                  <span className="text-[7px] text-ink/50">{u}</span>
+                  <span className={`text-[7px] font-bold ${["text-red", "text-red", "text-amber", "text-green"][i]}`}>
                     {["도전", "도전", "적정", "안정"][i]}
                   </span>
                 </div>
@@ -79,123 +75,60 @@ function Hero() {
             </div>
           </div>
 
-          {/* Screen B: 메인 — 경쟁력 분석 (가장 큼) */}
-          <div className="absolute left-[145px] top-0 z-20 w-[250px] rounded-xl bg-white p-4 shadow-[0_8px_32px_rgba(0,0,0,0.15)]">
+          {/* Screen B: 중앙 — 경쟁력 분석 */}
+          <div className="absolute left-[120px] top-[10px] z-20 w-[200px] rounded-xl bg-white p-3 shadow-[0_8px_32px_rgba(0,0,0,0.15)]">
             <div className="mb-1 text-[8px] font-bold text-primary">경쟁력 분석</div>
-            <div className="mb-2 flex items-center gap-3">
-              <svg width="110" height="110" viewBox="0 0 110 110">
-                <circle cx="55" cy="55" r="42" fill="none" stroke="#EAECF0" strokeWidth="6" />
-                <circle
-                  cx="55"
-                  cy="55"
-                  r="42"
-                  fill="none"
-                  stroke="url(#pg)"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                  strokeDasharray={2 * Math.PI * 42}
-                  strokeDashoffset={2 * Math.PI * 42 * 0.18}
-                  transform="rotate(-90 55 55)"
-                />
-                <defs>
-                  <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#448CFF" />
-                    <stop offset="100%" stopColor="#A8E847" />
-                  </linearGradient>
-                </defs>
-                <text
-                  x="55"
-                  y="51"
-                  textAnchor="middle"
-                  className="fill-ink text-[17px] font-extrabold"
-                  style={{ fontFamily: "inherit" }}
-                >
-                  258.02
-                </text>
-                <text
-                  x="55"
-                  y="65"
-                  textAnchor="middle"
-                  className="fill-slate text-[7px]"
-                  style={{ fontFamily: "inherit" }}
-                >
-                  종합 점수
-                </text>
+            <div className="mb-2 flex items-center gap-2">
+              <svg width="80" height="80" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="30" fill="none" stroke="#EAECF0" strokeWidth="5" />
+                <circle cx="40" cy="40" r="30" fill="none" stroke="url(#pg)" strokeWidth="5" strokeLinecap="round"
+                  strokeDasharray={2 * Math.PI * 30} strokeDashoffset={2 * Math.PI * 30 * 0.18} transform="rotate(-90 40 40)" />
+                <defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#448CFF" /><stop offset="100%" stopColor="#A8E847" /></linearGradient></defs>
+                <text x="40" y="38" textAnchor="middle" className="fill-ink text-[14px] font-extrabold" style={{ fontFamily: "inherit" }}>258</text>
+                <text x="40" y="50" textAnchor="middle" className="fill-slate text-[6px]" style={{ fontFamily: "inherit" }}>종합 점수</text>
               </svg>
               <div>
-                <div className="text-[8px] text-slate">전체 상위</div>
-                <div className="text-[16px] font-extrabold text-primary">
-                  54<span className="text-[10px]">%</span>
-                </div>
-                <div className="mt-1 text-[7px] text-slate">동일대학전형 탐구</div>
+                <div className="text-[7px] text-slate">전체 상위</div>
+                <div className="text-[14px] font-extrabold text-primary">54<span className="text-[9px]">%</span></div>
               </div>
             </div>
-            <div className="mb-1 text-[7px] font-bold text-ink/30">생기부 전형별 점수</div>
-            <div className="flex items-end gap-[3px]" style={{ height: 36 }}>
-              {[
-                { n: "학업", v: 95.2, h: 34, c: "#448CFF" },
-                { n: "진로", v: 70.0, h: 24, c: "#A8E847" },
-                { n: "공동체", v: 93.0, h: 32, c: "#448CFF" },
-              ].map((b) => (
+            <div className="mb-1 text-[6px] font-bold text-ink/30">생기부 전형별 점수</div>
+            <div className="flex items-end gap-[3px]" style={{ height: 28 }}>
+              {[{ n: "학업", h: 26, c: "#448CFF" }, { n: "진로", h: 18, c: "#A8E847" }, { n: "공동체", h: 24, c: "#448CFF" }].map((b) => (
                 <div key={b.n} className="flex flex-1 flex-col items-center gap-[1px]">
-                  <div
-                    className="w-full rounded-t"
-                    style={{ height: b.h, background: b.c, opacity: 0.6 }}
-                  />
-                  <span className="text-[6px] text-ink/35">{b.n}</span>
-                  <span className="text-[6px] font-bold text-ink/50">{b.v}</span>
+                  <div className="w-full rounded-t" style={{ height: b.h, background: b.c, opacity: 0.6 }} />
+                  <span className="text-[5px] text-ink/35">{b.n}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Screen C: 오른쪽 상단 — 추천대학 + 등급 */}
-          <div className="absolute right-0 top-2 z-10 w-[175px] rounded-xl bg-white p-3 shadow-[0_4px_20px_rgba(0,0,0,0.12)]">
-            <div className="mb-1 text-[8px] font-bold text-ink/40">추천 대학</div>
+          {/* Screen C: 오른쪽 상단 — 추천대학 */}
+          <div className="absolute right-0 top-0 z-10 w-[140px] rounded-xl bg-white p-3 shadow-[0_4px_20px_rgba(0,0,0,0.12)]">
+            <div className="mb-1 text-[7px] font-bold text-ink/40">추천 대학</div>
             <div className="mb-1.5 flex items-baseline gap-1">
-              <span className="text-[22px] font-extrabold leading-none text-primary">253</span>
-              <span className="text-[10px] font-bold text-ink/30">27명</span>
+              <span className="text-[18px] font-extrabold leading-none text-primary">253</span>
+              <span className="text-[8px] font-bold text-ink/30">27명</span>
             </div>
             <div className="flex gap-1">
-              <span className="rounded bg-red/10 px-1 py-0.5 text-[7px] font-bold text-red">
-                상향 2
-              </span>
-              <span className="rounded bg-amber/10 px-1 py-0.5 text-[7px] font-bold text-amber">
-                적정 3
-              </span>
-              <span className="rounded bg-green/10 px-1 py-0.5 text-[7px] font-bold text-green">
-                안정 3
-              </span>
+              <span className="rounded bg-red/10 px-1 py-0.5 text-[6px] font-bold text-red">상향 2</span>
+              <span className="rounded bg-amber/10 px-1 py-0.5 text-[6px] font-bold text-amber">적정 3</span>
+              <span className="rounded bg-green/10 px-1 py-0.5 text-[6px] font-bold text-green">안정 3</span>
             </div>
           </div>
 
-          {/* Screen D: 하단 — 과목 등급 바차트 */}
-          <div className="absolute bottom-0 left-[70px] z-30 w-[230px] rounded-xl bg-white p-2.5 shadow-[0_6px_24px_rgba(0,0,0,0.13)]">
-            <div className="mb-1.5 flex items-center justify-between">
-              <span className="text-[7px] font-bold text-ink/35">생기부 영역별 점수</span>
-              <span className="rounded bg-primary/10 px-1 py-0.5 text-[7px] font-bold text-primary">
-                평균 2.1
-              </span>
+          {/* Screen D: 하단 — 바차트 */}
+          <div className="absolute bottom-0 left-[50px] z-30 w-[190px] rounded-xl bg-white p-2.5 shadow-[0_6px_24px_rgba(0,0,0,0.13)]">
+            <div className="mb-1 flex items-center justify-between">
+              <span className="text-[6px] font-bold text-ink/35">생기부 영역별 점수</span>
+              <span className="rounded bg-primary/10 px-1 py-0.5 text-[6px] font-bold text-primary">평균 2.1</span>
             </div>
-            <div className="flex items-end gap-[3px]" style={{ height: 36 }}>
-              {[
-                { n: "학업", g: 1, h: 34 },
-                { n: "진로", g: 1, h: 34 },
-                { n: "공동체", g: 2, h: 26 },
-                { n: "인성", g: 2, h: 26 },
-                { n: "발전", g: 3, h: 18 },
-              ].map((s, i) => (
+            <div className="flex items-end gap-[2px]" style={{ height: 28 }}>
+              {[{ n: "학업", g: 1, h: 26 }, { n: "진로", g: 1, h: 26 }, { n: "공동체", g: 2, h: 20 }, { n: "인성", g: 2, h: 20 }, { n: "발전", g: 3, h: 14 }].map((s, i) => (
                 <div key={i} className="flex flex-1 flex-col items-center gap-[1px]">
-                  <span className="text-[6px] font-bold text-ink/40">{s.g}</span>
-                  <div
-                    className="w-full rounded-t"
-                    style={{
-                      height: s.h,
-                      background: s.g === 1 ? "#448CFF" : s.g === 2 ? "#A8E847" : "#E8A817",
-                      opacity: 0.65,
-                    }}
-                  />
-                  <span className="text-[5px] text-ink/25">{s.n}</span>
+                  <span className="text-[5px] font-bold text-ink/40">{s.g}</span>
+                  <div className="w-full rounded-t" style={{ height: s.h, background: s.g === 1 ? "#448CFF" : s.g === 2 ? "#A8E847" : "#E8A817", opacity: 0.65 }} />
+                  <span className="text-[4px] text-ink/25">{s.n}</span>
                 </div>
               ))}
             </div>
