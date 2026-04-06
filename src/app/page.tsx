@@ -39,7 +39,7 @@ function Hero() {
           </p>
           <a
             href="/input"
-            className="inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-[13px] font-bold text-ink transition hover:bg-cta-dark active:scale-[0.97]"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-[13px] font-bold text-white transition hover:bg-primary-dark active:scale-[0.97]"
           >
             무료 진단 시작
             <svg width="14" height="14" viewBox="0 0 20 20" fill="none">

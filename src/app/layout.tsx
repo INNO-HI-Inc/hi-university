@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="#" className="text-[13px] font-medium text-ink/60 transition hover:text-ink">
                 로그인
               </a>
-              <a href="#" className="rounded-full bg-cta px-4 py-[6px] text-[13px] font-bold text-ink transition hover:bg-cta-dark">
+              <a href="#" className="rounded-full bg-primary px-4 py-[6px] text-[13px] font-bold text-white transition hover:bg-primary-dark">
                 회원가입
               </a>
               <a href="/input" className="rounded-full bg-primary px-4 py-[6px] text-[13px] font-bold text-white transition hover:bg-primary-dark">
