@@ -256,7 +256,7 @@ function Card({
             {badge}
           </span>
         )}
-        <div className="flex min-h-[140px] flex-1 items-center justify-center bg-[#F5F7FB] px-5 py-6">
+        <div className="flex min-h-[140px] flex-1 items-center justify-center bg-white px-5 py-6">
           {children}
         </div>
         <div className="px-4 py-3">
