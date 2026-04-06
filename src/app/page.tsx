@@ -483,13 +483,13 @@ function Sidebar() {
 
       {/* Coupon card */}
       <div className="relative flex items-center gap-3 overflow-hidden rounded-2xl border border-line bg-white p-4">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red/8">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/8">
           <svg
             width="20"
             height="20"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#E8453C"
+            stroke="#448CFF"
             strokeWidth="2"
             strokeLinecap="round"
           >
@@ -499,11 +499,11 @@ function Sidebar() {
         </div>
         <div className="flex-1">
           <p className="text-[12px] font-bold text-ink">신규 가입 즉시</p>
-          <p className="text-[11px] font-bold text-red">생기부 진단 1회 무료!</p>
+          <p className="text-[11px] font-bold text-primary">생기부 진단 1회 무료!</p>
         </div>
         {/* Coupon badge */}
-        <div className="flex h-[36px] w-[56px] shrink-0 items-center justify-center rounded-md border border-dashed border-red/25 bg-red/5">
-          <span className="text-[8px] font-extrabold text-red">COUPON</span>
+        <div className="flex h-[36px] w-[56px] shrink-0 items-center justify-center rounded-md border border-dashed border-primary/25 bg-primary/5">
+          <span className="text-[8px] font-extrabold text-primary">COUPON</span>
         </div>
       </div>
     </div>
