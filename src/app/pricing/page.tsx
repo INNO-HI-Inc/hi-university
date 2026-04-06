@@ -103,7 +103,7 @@ export default function PricingPage() {
           <h2 className="mb-8 text-center text-[20px] font-extrabold text-ink">타사 대비 차별점</h2>
           <div className="overflow-hidden rounded-xl border border-line bg-white">
             <div className="grid grid-cols-[1fr_80px_80px] items-center border-b border-line bg-paper px-5 py-3 text-[11px] font-bold text-slate">
-              <span>기능</span><span className="text-center">Vibeon</span><span className="text-center">타사</span>
+              <span>기능</span><span className="text-center">HiUni</span><span className="text-center">타사</span>
             </div>
             {[
               { feature: "생기부 종합 분석 리포트", us: true, them: true },

@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="mx-auto flex h-[52px] max-w-[1400px] items-center px-6">
             {/* 로고 */}
             <a href="/" className="mr-8 shrink-0 text-[22px] font-black tracking-tight text-primary">
-              Vibeon
+              HiUni
             </a>
             {/* 메뉴 — 로고 바로 옆에서 왼쪽 정렬로 흐름 */}
             <div className="hidden items-center gap-6 md:flex">
@@ -82,12 +82,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             <div className="flex items-center justify-between border-t border-line py-4 text-[11px] text-slate">
               <div className="flex items-center gap-4">
-                <span className="font-black text-primary">Vibeon</span>
+                <span className="font-black text-primary">HiUni</span>
                 <a href="#" className="hover:text-ink">이용약관</a>
                 <a href="#" className="font-bold hover:text-ink">개인정보처리방침</a>
               </div>
               <div className="flex items-center gap-3">
-                <span>&copy; 2026 Vibeon</span>
+                <span>&copy; 2026 HiUni</span>
                 {[0,1,2].map(i=>(
                   <span key={i} className="flex h-6 w-6 items-center justify-center rounded-full border border-line text-[10px] text-slate">
                     {["f","X","in"][i]}
