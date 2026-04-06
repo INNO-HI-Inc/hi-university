@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-paper text-ink antialiased">
         {/* ═══ NAV — vibeon 스타일 정확 복제 ═══ */}
         <nav className="sticky top-0 z-50 border-b border-line bg-white">
-          <div className="mx-auto flex h-[52px] max-w-[1280px] items-center px-6">
+          <div className="mx-auto flex h-[52px] max-w-[1600px] items-center px-6">
             {/* 로고 */}
             <a href="/" className="mr-8 shrink-0 text-[22px] font-black tracking-tight text-primary">
               Vibeon
@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* ═══ FOOTER ═══ */}
         <footer className="border-t border-line">
-          <div className="mx-auto max-w-[1280px] px-6">
+          <div className="mx-auto max-w-[1600px] px-6">
             <div className="grid gap-8 py-8 md:grid-cols-3">
               <div>
                 <h4 className="mb-3 text-[13px] font-bold text-ink">진학상담</h4>
