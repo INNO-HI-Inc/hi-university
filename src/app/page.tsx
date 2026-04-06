@@ -115,7 +115,7 @@ function Hero() {
 function ServiceCards() {
   return (
     <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      <Card href="/demo" name="생기부ON" desc="생기부 종합 분석 리포트, 강점·약점 진단 + 보강 전략">
+      <Card href="/analyze" name="생기부ON" desc="생기부 종합 분석 리포트, 강점·약점 진단 + 보강 전략">
         <IllustSaenggibu />
       </Card>
       <Card href="/result" name="학종ON" desc="130개 대학 합격 가능성 진단, 최적화 대학 추천">
