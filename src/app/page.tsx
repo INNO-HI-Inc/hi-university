@@ -55,80 +55,49 @@ function Hero() {
           </a>
         </div>
 
-        {/* RIGHT — white app screens */}
-        <div className="relative hidden h-[300px] lg:block overflow-hidden">
-          {/* Screen A: 왼쪽 — 합격 예측 */}
-          <div className="absolute left-0 top-0 z-10 w-[160px] rounded-xl bg-white p-3 shadow-[0_4px_20px_rgba(0,0,0,0.12)]">
-            <div className="mb-2 flex items-center gap-1">
-              <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-              <span className="text-[8px] font-bold text-primary">합격 예측</span>
+        {/* RIGHT — single app mockup */}
+        <div className="hidden lg:flex items-center justify-center">
+          <div className="w-[280px] rounded-2xl bg-white p-5 shadow-[0_8px_40px_rgba(0,0,0,0.2)]">
+            {/* Header */}
+            <div className="mb-3 flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
+                <div className="h-2 w-2 rounded-full bg-primary" />
+                <span className="text-[10px] font-bold text-primary">경쟁력 분석</span>
+              </div>
+              <span className="rounded bg-primary/10 px-1.5 py-0.5 text-[8px] font-bold text-primary">상위 54%</span>
             </div>
-            <div className="space-y-[3px]">
-              {["서울대 컴공", "연세대 AI", "고려대 컴퓨터", "성균관대 SW"].map((u, i) => (
-                <div key={u} className="flex items-center justify-between rounded bg-paper px-2 py-[4px]">
-                  <span className="text-[7px] text-ink/50">{u}</span>
-                  <span className={`text-[7px] font-bold ${["text-red", "text-red", "text-amber", "text-green"][i]}`}>
-                    {["도전", "도전", "적정", "안정"][i]}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Screen B: 중앙 — 경쟁력 분석 */}
-          <div className="absolute left-[120px] top-[10px] z-20 w-[200px] rounded-xl bg-white p-3 shadow-[0_8px_32px_rgba(0,0,0,0.15)]">
-            <div className="mb-1 text-[8px] font-bold text-primary">경쟁력 분석</div>
-            <div className="mb-2 flex items-center gap-2">
-              <svg width="80" height="80" viewBox="0 0 80 80">
-                <circle cx="40" cy="40" r="30" fill="none" stroke="#EAECF0" strokeWidth="5" />
-                <circle cx="40" cy="40" r="30" fill="none" stroke="url(#pg)" strokeWidth="5" strokeLinecap="round"
-                  strokeDasharray={2 * Math.PI * 30} strokeDashoffset={2 * Math.PI * 30 * 0.18} transform="rotate(-90 40 40)" />
+            {/* Score */}
+            <div className="mb-4 flex items-center gap-4">
+              <svg width="100" height="100" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#EAECF0" strokeWidth="6" />
+                <circle cx="50" cy="50" r="38" fill="none" stroke="url(#pg)" strokeWidth="6" strokeLinecap="round"
+                  strokeDasharray={2 * Math.PI * 38} strokeDashoffset={2 * Math.PI * 38 * 0.18} transform="rotate(-90 50 50)" />
                 <defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#448CFF" /><stop offset="100%" stopColor="#A8E847" /></linearGradient></defs>
-                <text x="40" y="38" textAnchor="middle" className="fill-ink text-[14px] font-extrabold" style={{ fontFamily: "inherit" }}>258</text>
-                <text x="40" y="50" textAnchor="middle" className="fill-slate text-[6px]" style={{ fontFamily: "inherit" }}>종합 점수</text>
+                <text x="50" y="47" textAnchor="middle" className="fill-ink text-[18px] font-extrabold" style={{ fontFamily: "inherit" }}>258</text>
+                <text x="50" y="61" textAnchor="middle" className="fill-slate text-[8px]" style={{ fontFamily: "inherit" }}>종합 점수</text>
               </svg>
-              <div>
-                <div className="text-[7px] text-slate">전체 상위</div>
-                <div className="text-[14px] font-extrabold text-primary">54<span className="text-[9px]">%</span></div>
+              <div className="space-y-2">
+                {[{ l: "학업", v: "95.2", c: "#448CFF" }, { l: "진로", v: "70.0", c: "#A8E847" }, { l: "공동체", v: "93.0", c: "#448CFF" }].map((s) => (
+                  <div key={s.l} className="flex items-center gap-2">
+                    <div className="h-1.5 w-1.5 rounded-full" style={{ background: s.c }} />
+                    <span className="text-[9px] text-ink/50 w-[32px]">{s.l}</span>
+                    <span className="text-[10px] font-bold text-ink">{s.v}</span>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="mb-1 text-[6px] font-bold text-ink/30">생기부 전형별 점수</div>
-            <div className="flex items-end gap-[3px]" style={{ height: 28 }}>
-              {[{ n: "학업", h: 26, c: "#448CFF" }, { n: "진로", h: 18, c: "#A8E847" }, { n: "공동체", h: 24, c: "#448CFF" }].map((b) => (
-                <div key={b.n} className="flex flex-1 flex-col items-center gap-[1px]">
-                  <div className="w-full rounded-t" style={{ height: b.h, background: b.c, opacity: 0.6 }} />
-                  <span className="text-[5px] text-ink/35">{b.n}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Screen C: 오른쪽 상단 — 추천대학 */}
-          <div className="absolute right-0 top-0 z-10 w-[140px] rounded-xl bg-white p-3 shadow-[0_4px_20px_rgba(0,0,0,0.12)]">
-            <div className="mb-1 text-[7px] font-bold text-ink/40">추천 대학</div>
-            <div className="mb-1.5 flex items-baseline gap-1">
-              <span className="text-[18px] font-extrabold leading-none text-primary">253</span>
-              <span className="text-[8px] font-bold text-ink/30">27명</span>
-            </div>
-            <div className="flex gap-1">
-              <span className="rounded bg-red/10 px-1 py-0.5 text-[6px] font-bold text-red">상향 2</span>
-              <span className="rounded bg-amber/10 px-1 py-0.5 text-[6px] font-bold text-amber">적정 3</span>
-              <span className="rounded bg-green/10 px-1 py-0.5 text-[6px] font-bold text-green">안정 3</span>
-            </div>
-          </div>
-
-          {/* Screen D: 하단 — 바차트 */}
-          <div className="absolute bottom-0 left-[50px] z-30 w-[190px] rounded-xl bg-white p-2.5 shadow-[0_6px_24px_rgba(0,0,0,0.13)]">
-            <div className="mb-1 flex items-center justify-between">
-              <span className="text-[6px] font-bold text-ink/35">생기부 영역별 점수</span>
-              <span className="rounded bg-primary/10 px-1 py-0.5 text-[6px] font-bold text-primary">평균 2.1</span>
-            </div>
-            <div className="flex items-end gap-[2px]" style={{ height: 28 }}>
-              {[{ n: "학업", g: 1, h: 26 }, { n: "진로", g: 1, h: 26 }, { n: "공동체", g: 2, h: 20 }, { n: "인성", g: 2, h: 20 }, { n: "발전", g: 3, h: 14 }].map((s, i) => (
-                <div key={i} className="flex flex-1 flex-col items-center gap-[1px]">
-                  <span className="text-[5px] font-bold text-ink/40">{s.g}</span>
-                  <div className="w-full rounded-t" style={{ height: s.h, background: s.g === 1 ? "#448CFF" : s.g === 2 ? "#A8E847" : "#E8A817", opacity: 0.65 }} />
-                  <span className="text-[4px] text-ink/25">{s.n}</span>
+            {/* University list */}
+            <div className="mb-2 text-[9px] font-bold text-ink/40">추천 대학</div>
+            <div className="space-y-[4px]">
+              {[
+                { n: "서울대 컴공", t: "도전", c: "text-red", bg: "bg-red/10" },
+                { n: "연세대 AI", t: "도전", c: "text-red", bg: "bg-red/10" },
+                { n: "고려대 컴퓨터", t: "적정", c: "text-amber", bg: "bg-amber/10" },
+                { n: "성균관대 SW", t: "안정", c: "text-green", bg: "bg-green/10" },
+              ].map((u) => (
+                <div key={u.n} className="flex items-center justify-between rounded-lg bg-paper px-3 py-[6px]">
+                  <span className="text-[10px] font-medium text-ink/70">{u.n}</span>
+                  <span className={`text-[9px] font-bold ${u.c} rounded px-1.5 py-0.5 ${u.bg}`}>{u.t}</span>
                 </div>
               ))}
             </div>
@@ -193,7 +162,7 @@ function Card({
           <h3 className="text-[18px] font-extrabold text-ink">{name}</h3>
           <p className="mt-1 text-[12px] leading-[1.6] text-slate">{desc}</p>
         </div>
-        <div className="shrink-0 flex h-[56px] w-[56px] items-center justify-center rounded-2xl" style={{ background: "linear-gradient(135deg, #5DA0FF 0%, #3070E0 100%)", boxShadow: "0 6px 16px rgba(68,140,255,0.35)" }}>
+        <div className="shrink-0">
           {children}
         </div>
       </div>
@@ -203,61 +172,36 @@ function Card({
 
 /* ═══ Card Icons (compact SVG) ═══ */
 
-function IllustSaenggibu() {
+function Icon3D({ children }: { children: React.ReactNode }) {
   return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-      <polyline points="14 2 14 8 20 8" />
-      <line x1="16" y1="13" x2="8" y2="13" />
-      <line x1="16" y1="17" x2="8" y2="17" />
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ filter: "drop-shadow(0 3px 6px rgba(68,140,255,0.35))" }}>
+      {children}
     </svg>
   );
+}
+
+function IllustSaenggibu() {
+  return <Icon3D><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></Icon3D>;
 }
 
 function IllustHakjong() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10" />
-      <polyline points="12 6 12 12 16 14" />
-    </svg>
-  );
+  return <Icon3D><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></Icon3D>;
 }
 
 function IllustGygwa() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="18" y1="20" x2="18" y2="10" />
-      <line x1="12" y1="20" x2="12" y2="4" />
-      <line x1="6" y1="20" x2="6" y2="14" />
-    </svg>
-  );
+  return <Icon3D><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></Icon3D>;
 }
 
 function IllustInterview() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-    </svg>
-  );
+  return <Icon3D><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></Icon3D>;
 }
 
 function IllustNaesin() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-    </svg>
-  );
+  return <Icon3D><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></Icon3D>;
 }
 
 function IllustConsult() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-    </svg>
-  );
+  return <Icon3D><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></Icon3D>;
 }
 
 /* ═══════════════════════════════════════════
