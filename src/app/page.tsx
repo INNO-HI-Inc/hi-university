@@ -234,7 +234,7 @@ function ServiceCards() {
   );
 }
 
-/* Card — top text + bottom illustration */
+/* Card — left: title+desc / right: icon */
 function Card({
   href,
   name,
@@ -250,179 +250,81 @@ function Card({
 }) {
   return (
     <a href={href} className="card-3d group relative">
-      <div className="card-3d-inner svc-card flex flex-col overflow-hidden rounded-2xl border border-line bg-white">
+      <div className="card-3d-inner svc-card flex items-center gap-4 overflow-hidden rounded-2xl border border-line bg-white px-5 py-5">
         {badge && (
           <span className="absolute right-2 top-2 z-10 rounded-full bg-cta px-2 py-0.5 text-[9px] font-bold text-ink">
             {badge}
           </span>
         )}
-        <div className="flex min-h-[140px] flex-1 items-center justify-center bg-white px-5 py-6">
-          {children}
-        </div>
-        <div className="px-4 py-3">
+        <div className="flex-1 min-w-0">
           <h3 className="text-[14px] font-bold text-ink">{name}</h3>
-          <p className="mt-0.5 text-[11px] leading-[1.5] text-slate">{desc}</p>
+          <p className="mt-1 text-[11px] leading-[1.5] text-slate">{desc}</p>
+        </div>
+        <div className="shrink-0 flex h-[60px] w-[60px] items-center justify-center rounded-xl bg-primary/8">
+          {children}
         </div>
       </div>
     </a>
   );
 }
 
-/* ═══ Card Illustrations (large, screenshot-matched) ═══ */
+/* ═══ Card Icons (compact SVG) ═══ */
 
-/* 생기부ON — two overlapping document cards */
 function IllustSaenggibu() {
   return (
-    <div className="relative flex items-center justify-center" style={{ width: 160, height: 100 }}>
-      {/* back doc */}
-      <div className="absolute left-2 top-0 w-[100px] rounded-lg bg-white p-2.5 shadow-md ring-1 ring-line">
-        <div className="mb-2 h-1.5 w-10 rounded bg-primary/30" />
-        <div className="space-y-[3px]">
-          <div className="h-[3px] w-full rounded bg-line" />
-          <div className="h-[3px] w-14 rounded bg-line/70" />
-          <div className="h-[3px] w-10 rounded bg-line/50" />
-        </div>
-        <div className="mt-3 flex gap-[3px]">
-          <div className="h-7 w-[8px] rounded-t-sm bg-primary/30" />
-          <div className="h-10 w-[8px] rounded-t-sm bg-primary/50" />
-          <div className="h-5 w-[8px] rounded-t-sm bg-primary/25" />
-          <div className="h-8 w-[8px] rounded-t-sm bg-cta/40" />
-        </div>
-      </div>
-      {/* front doc */}
-      <div className="absolute right-2 top-3 w-[95px] rounded-lg bg-white p-2.5 shadow-lg ring-1 ring-line">
-        <div className="mb-2 h-1.5 w-8 rounded bg-primary/25" />
-        <div className="flex items-center gap-1.5">
-          <div className="h-10 w-10 rounded bg-primary/8" />
-          <div className="flex-1 space-y-[3px]">
-            <div className="h-[3px] rounded bg-line" />
-            <div className="h-[3px] w-3/4 rounded bg-line/60" />
-            <div className="h-[3px] w-1/2 rounded bg-line/40" />
-          </div>
-        </div>
-        <div className="mt-2 h-2 w-full rounded bg-primary/10" />
-      </div>
-    </div>
-  );
-}
-
-/* 학종ON — donut gauge + stats */
-function IllustHakjong() {
-  return (
-    <div className="flex items-center gap-4">
-      <svg width="72" height="72" viewBox="0 0 72 72">
-        <circle cx="36" cy="36" r="27" fill="none" stroke="#EAECF0" strokeWidth="5" />
-        <circle
-          cx="36"
-          cy="36"
-          r="27"
-          fill="none"
-          stroke="#448CFF"
-          strokeWidth="5"
-          strokeLinecap="round"
-          strokeDasharray={2 * Math.PI * 27}
-          strokeDashoffset={2 * Math.PI * 27 * 0.18}
-          transform="rotate(-90 36 36)"
-        />
-        <text x="36" y="33" textAnchor="middle" className="text-[13px] font-extrabold fill-ink" style={{ fontFamily: "inherit" }}>82</text>
-        <text x="36" y="44" textAnchor="middle" className="text-[8px] fill-slate" style={{ fontFamily: "inherit" }}>종합</text>
-      </svg>
-      <div className="space-y-1.5">
-        <div className="h-1.5 w-14 rounded bg-primary/25" />
-        <div className="h-1.5 w-10 rounded bg-primary/15" />
-        <div className="h-1.5 w-12 rounded bg-cta/25" />
-      </div>
-    </div>
-  );
-}
-
-/* 교과ON — line chart with avatar */
-function IllustGygwa() {
-  return (
-    <div className="flex flex-col items-center gap-1">
-      <svg width="150" height="70" viewBox="0 0 150 70">
-        <polyline points="5,55 30,42 55,48 80,22 105,28 130,15 145,10" fill="none" stroke="#448CFF" strokeWidth="2.5" opacity="0.6" strokeLinecap="round" strokeLinejoin="round" />
-        <polyline points="5,58 30,52 55,55 80,42 105,45 130,36 145,30" fill="none" stroke="#A8E847" strokeWidth="2.5" opacity="0.5" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="80" cy="22" r="5" fill="#448CFF" />
-        <circle cx="80" cy="22" r="2.5" fill="white" />
-        {/* grid lines */}
-        <line x1="5" y1="68" x2="145" y2="68" stroke="#EAECF0" strokeWidth="0.5" />
-        <line x1="5" y1="45" x2="145" y2="45" stroke="#EAECF0" strokeWidth="0.5" strokeDasharray="3,3" />
-        <line x1="5" y1="22" x2="145" y2="22" stroke="#EAECF0" strokeWidth="0.5" strokeDasharray="3,3" />
-      </svg>
-    </div>
-  );
-}
-
-/* 면접ON — chat bubble + avatar */
-function IllustInterview() {
-  return (
-    <div className="flex items-center gap-3">
-      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-        </svg>
-      </div>
-      <div className="flex-1 space-y-1.5">
-        <div className="rounded-lg bg-white px-3 py-1.5 shadow-sm ring-1 ring-line">
-          <div className="h-[3px] w-full rounded bg-line" />
-          <div className="mt-1 h-[3px] w-3/4 rounded bg-line/60" />
-        </div>
-        <div className="rounded-lg bg-primary/8 px-3 py-1.5">
-          <div className="h-[3px] w-4/5 rounded bg-primary/20" />
-          <div className="mt-1 h-[3px] w-1/2 rounded bg-primary/15" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* 내신 진단 — rainbow arc gauge */
-function IllustNaesin() {
-  return (
-    <svg width="120" height="80" viewBox="0 0 120 80">
-      <path d="M10 72 Q60 -10 110 72" fill="none" stroke="#448CFF" strokeWidth="4" opacity="0.35" />
-      <path d="M18 72 Q60 2 102 72" fill="none" stroke="#A8E847" strokeWidth="4" opacity="0.35" />
-      <path d="M26 72 Q60 16 94 72" fill="none" stroke="#E8A817" strokeWidth="4" opacity="0.35" />
-      <circle cx="60" cy="34" r="9" fill="#448CFF" opacity="0.5" />
-      <text x="60" y="38" textAnchor="middle" className="text-[9px] font-bold fill-white" style={{ fontFamily: "inherit" }}>나</text>
-      {/* scale labels */}
-      <text x="10" y="78" textAnchor="middle" className="text-[7px] fill-slate" style={{ fontFamily: "inherit" }}>1</text>
-      <text x="60" y="8" textAnchor="middle" className="text-[7px] fill-slate" style={{ fontFamily: "inherit" }}>5</text>
-      <text x="110" y="78" textAnchor="middle" className="text-[7px] fill-slate" style={{ fontFamily: "inherit" }}>9</text>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+      <line x1="16" y1="13" x2="8" y2="13" />
+      <line x1="16" y1="17" x2="8" y2="17" />
+      <polyline points="10 9 9 9 8 9" />
     </svg>
   );
 }
 
-/* 전학상담 — overlapping person avatars */
+function IllustHakjong() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  );
+}
+
+function IllustGygwa() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="18" y1="20" x2="18" y2="10" />
+      <line x1="12" y1="20" x2="12" y2="4" />
+      <line x1="6" y1="20" x2="6" y2="14" />
+    </svg>
+  );
+}
+
+function IllustInterview() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  );
+}
+
+function IllustNaesin() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+    </svg>
+  );
+}
+
 function IllustConsult() {
   return (
-    <div className="flex items-center gap-2">
-      <div className="flex items-center">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber/15 ring-2 ring-[#EDF4FF]">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8A817" strokeWidth="2">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg>
-        </div>
-        <div className="-ml-3 flex h-12 w-12 items-center justify-center rounded-full bg-green/15 ring-2 ring-[#EDF4FF]">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1DAA6B" strokeWidth="2">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg>
-        </div>
-        <div className="-ml-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 ring-2 ring-[#EDF4FF]">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg>
-        </div>
-      </div>
-      <div className="ml-1 space-y-1.5">
-        <div className="h-2 w-12 rounded bg-line" />
-        <div className="h-2 w-16 rounded bg-line/50" />
-      </div>
-    </div>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
   );
 }
 
