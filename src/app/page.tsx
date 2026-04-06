@@ -2,7 +2,7 @@
 
 export default function Home() {
   return (
-    <div className="relative mx-auto max-w-[1400px] px-6 py-6">
+    <div className="relative mx-auto max-w-[1400px] px-4 md:px-6 py-4 md:py-6">
       {/* 2-COLUMN LAYOUT (starts from hero) */}
       <div className="grid gap-5 lg:grid-cols-[1fr_310px]">
         {/* LEFT COLUMN */}
@@ -25,11 +25,11 @@ export default function Home() {
 function Hero() {
   return (
     <div className="overflow-hidden rounded-2xl hero-dark">
-      <div className="grid items-center gap-4 px-[40px] py-[52px] lg:grid-cols-[340px_1fr]">
+      <div className="grid items-center gap-4 px-5 py-10 md:px-[40px] md:py-[52px] lg:grid-cols-[340px_1fr]">
         {/* LEFT TEXT */}
         <div>
-          <p className="mb-2 text-[14px] font-medium text-primary-light/70">나만의 입시 컨설턴트</p>
-          <h1 className="mb-3 text-[32px] lg:text-[40px] font-extrabold leading-[1.18] text-white whitespace-nowrap">
+          <p className="mb-2 text-[12px] md:text-[14px] font-medium text-white/60">나만의 입시 컨설턴트</p>
+          <h1 className="mb-3 text-[24px] md:text-[32px] lg:text-[40px] font-extrabold leading-[1.2] text-white">
             나만의 입시 컨설턴트 바이브온
           </h1>
           <p className="mb-6 text-[13px] leading-[1.7] text-white/45">

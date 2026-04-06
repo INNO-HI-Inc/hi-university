@@ -41,7 +41,7 @@ body {
 .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
 
 .hero-dark {
-  background: linear-gradient(135deg, #2B3254 0%, #3A4470 50%, #2B3254 100%);
+  background: linear-gradient(135deg, #1B3A6B 0%, #2960A8 40%, #448CFF 100%);
 }
 
 /* card hover */
