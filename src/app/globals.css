@@ -12,10 +12,10 @@
 @font-face { font-family: "A2G"; src: url("/fonts/에이투지체-9Black.woff2") format("woff2"); font-weight: 900; font-display: swap; }
 
 @theme {
-  --color-primary: #448CFF;
-  --color-primary-light: #6BA3FF;
-  --color-primary-dark: #2F6FE4;
-  --color-primary-bg: #EDF4FF;
+  --color-primary: #6C5CE7;
+  --color-primary-light: #8B7CF0;
+  --color-primary-dark: #5A4BD6;
+  --color-primary-bg: #F0EDFF;
   --color-ink: #1a1a2e;
   --color-ink-light: #2d2d44;
   --color-slate: #8b8b9e;
