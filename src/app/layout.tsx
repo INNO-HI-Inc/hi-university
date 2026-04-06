@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body className="min-h-screen bg-white text-ink antialiased">
+      <body className="min-h-screen bg-paper text-ink antialiased">
         {/* ═══ NAV — vibeon 스타일 정확 복제 ═══ */}
         <nav className="sticky top-0 z-50 border-b border-line bg-white">
           <div className="mx-auto flex h-[52px] max-w-[1280px] items-center px-6">
