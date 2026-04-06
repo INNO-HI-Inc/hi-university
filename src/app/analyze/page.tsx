@@ -29,30 +29,16 @@ const PLACEHOLDER = `여기에 생활기록부 텍스트를 붙여넣으세요.
 
 export default function AnalyzePage() {
   const [text, setText] = useState("");
-  const [apiKey, setApiKey] = useState("");
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState("");
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [error, setError] = useState("");
 
-  // 저장된 키 불러오기
-  useState(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("openai_api_key");
-      if (saved) setApiKey(saved);
-    }
-  });
-
   const handleAnalyze = async () => {
-    if (!apiKey.startsWith("sk-")) {
-      setError("올바른 OpenAI API 키를 입력해주세요.");
-      return;
-    }
     if (text.trim().length < 50) {
       setError("생활기록부 텍스트를 50자 이상 입력해주세요.");
       return;
     }
-    localStorage.setItem("openai_api_key", apiKey);
     setError("");
     setLoading(true);
     setProgress("AI가 생기부를 분석하고 있습니다...");
@@ -71,7 +57,7 @@ export default function AnalyzePage() {
     }, 3000);
 
     try {
-      const data = await analyzeRecord(text, apiKey);
+      const data = await analyzeRecord(text);
       setResult(data);
       // 결과를 localStorage에 저장하여 리포트 페이지에서 활용
       localStorage.setItem("analysisResult", JSON.stringify(data));
@@ -144,20 +130,6 @@ export default function AnalyzePage() {
           ))}
         </div>
 
-        {/* API Key */}
-        <div className="mb-5">
-          <label className="mb-2 block text-[13px] font-bold text-ink">OpenAI API 키</label>
-          <input
-            type="password"
-            value={apiKey}
-            onChange={(e) => setApiKey(e.target.value)}
-            placeholder="sk-proj-..."
-            disabled={loading}
-            className="w-full rounded-xl border border-line bg-white px-4 py-3 text-[14px] text-ink placeholder:text-slate/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition disabled:opacity-50"
-          />
-          <p className="mt-1.5 text-[11px] text-slate">키는 브라우저에만 저장되며 외부로 전송되지 않습니다 (OpenAI API 직접 호출)</p>
-        </div>
-
         {/* Textarea */}
         <div className="mb-4">
           <label className="mb-2 block text-[13px] font-bold text-ink">생활기록부 텍스트</label>
@@ -184,7 +156,7 @@ export default function AnalyzePage() {
         {/* Submit */}
         <button
           onClick={handleAnalyze}
-          disabled={loading || text.trim().length < 50 || !apiKey.startsWith("sk-")}
+          disabled={loading || text.trim().length < 50}
           className="w-full rounded-xl bg-primary py-4 text-[15px] font-bold text-white shadow-[0_4px_16px_rgba(68,140,255,0.3)] transition hover:bg-primary-dark active:scale-[0.99] disabled:opacity-40 disabled:shadow-none"
         >
           {loading ? (

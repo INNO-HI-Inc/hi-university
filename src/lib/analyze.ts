@@ -91,9 +91,10 @@ const SYSTEM_PROMPT = `당신은 대한민국 최고의 입시 컨설턴트입�
 - 모든 텍스트는 한국어로 작성
 - 내신 등급을 정확히 파악하고 그에 맞는 현실적 대학을 추천할 것`;
 
-export async function analyzeRecord(recordText: string, apiKey?: string): Promise<AnalysisResult> {
-  const key = apiKey || localStorage.getItem("openai_api_key");
-  if (!key) throw new Error("OpenAI API 키를 입력해주세요.");
+/** 서버 사이드에서 OpenAI 호출 (API 라우트용) */
+export async function analyzeRecordServer(recordText: string): Promise<AnalysisResult> {
+  const key = process.env.OPENAI_API_KEY;
+  if (!key) throw new Error("서버에 OPENAI_API_KEY가 설정되지 않았습니다.");
 
   const res = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
@@ -124,21 +125,32 @@ export async function analyzeRecord(recordText: string, apiKey?: string): Promis
   const content = json.choices?.[0]?.message?.content;
   if (!content) throw new Error("AI 응답이 비어있습니다.");
 
-  // JSON 파싱 (마크다운 코드블록 제거)
   const cleaned = content.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
   const parsed = JSON.parse(cleaned);
 
+  const nameMatch = recordText.match(/(?:성명|이름|학생)\s*[:\s]\s*([가-힣]{2,4})/);
+
   return {
     id: crypto.randomUUID(),
-    studentName: extractName(recordText),
+    studentName: nameMatch?.[1] ?? "학생",
     createdAt: new Date().toISOString(),
     status: "completed",
     ...parsed,
   };
 }
 
-function extractName(text: string): string {
-  // 생기부에서 이름 추출 시도
-  const match = text.match(/(?:성명|이름|학생)\s*[:\s]\s*([가-힣]{2,4})/);
-  return match?.[1] ?? "학생";
+/** 클라이언트에서 서버 API 호출 */
+export async function analyzeRecord(recordText: string): Promise<AnalysisResult> {
+  const res = await fetch("/api/analyze", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: recordText }),
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ error: "분석 중 오류가 발생했습니다." }));
+    throw new Error(err.error || `오류: ${res.status}`);
+  }
+
+  return res.json();
 }
