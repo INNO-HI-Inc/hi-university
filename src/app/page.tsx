@@ -193,7 +193,7 @@ function Card({
           <h3 className="text-[18px] font-extrabold text-ink">{name}</h3>
           <p className="mt-1 text-[12px] leading-[1.6] text-slate">{desc}</p>
         </div>
-        <div className="shrink-0 flex h-[56px] w-[56px] items-center justify-center rounded-2xl bg-gradient-to-br from-[#5DA0FF] to-[#3070E0] shadow-[0_6px_16px_rgba(68,140,255,0.35)]">
+        <div className="shrink-0 flex h-[56px] w-[56px] items-center justify-center rounded-2xl" style={{ background: "linear-gradient(135deg, #5DA0FF 0%, #3070E0 100%)", boxShadow: "0 6px 16px rgba(68,140,255,0.35)" }}>
           {children}
         </div>
       </div>
