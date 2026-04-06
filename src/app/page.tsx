@@ -257,10 +257,10 @@ function Card({
           </span>
         )}
         <div className="flex-1 min-w-0">
-          <h3 className="text-[14px] font-bold text-ink">{name}</h3>
-          <p className="mt-1 text-[11px] leading-[1.5] text-slate">{desc}</p>
+          <h3 className="text-[18px] font-extrabold text-ink">{name}</h3>
+          <p className="mt-1 text-[12px] leading-[1.6] text-slate">{desc}</p>
         </div>
-        <div className="shrink-0 flex h-[60px] w-[60px] items-center justify-center rounded-xl bg-primary/8">
+        <div className="shrink-0 flex h-[56px] w-[56px] items-center justify-center rounded-2xl bg-gradient-to-br from-[#5DA0FF] to-[#3070E0] shadow-[0_6px_16px_rgba(68,140,255,0.35)]">
           {children}
         </div>
       </div>
@@ -272,19 +272,18 @@ function Card({
 
 function IllustSaenggibu() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
       <polyline points="14 2 14 8 20 8" />
       <line x1="16" y1="13" x2="8" y2="13" />
       <line x1="16" y1="17" x2="8" y2="17" />
-      <polyline points="10 9 9 9 8 9" />
     </svg>
   );
 }
 
 function IllustHakjong() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="10" />
       <polyline points="12 6 12 12 16 14" />
     </svg>
@@ -293,7 +292,7 @@ function IllustHakjong() {
 
 function IllustGygwa() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <line x1="18" y1="20" x2="18" y2="10" />
       <line x1="12" y1="20" x2="12" y2="4" />
       <line x1="6" y1="20" x2="6" y2="14" />
@@ -303,7 +302,7 @@ function IllustGygwa() {
 
 function IllustInterview() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
     </svg>
   );
@@ -311,7 +310,7 @@ function IllustInterview() {
 
 function IllustNaesin() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
     </svg>
   );
@@ -319,7 +318,7 @@ function IllustNaesin() {
 
 function IllustConsult() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#448CFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
       <circle cx="9" cy="7" r="4" />
       <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
